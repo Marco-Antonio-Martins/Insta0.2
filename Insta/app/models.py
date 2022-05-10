@@ -1,3 +1,4 @@
+import profile
 from pydoc import describe
 from pyexpat import model
 from statistics import mode
@@ -10,6 +11,7 @@ class usuario(models.Model):
     bio = models.TextField(max_length=150)
     email = models.EmailField("E-mail", max_length=150)
     arroba = models.CharField(max_length=10, primary_key=True)
+    profile = models.ImageField("Foto de perfil", blank=True, null=True)
 
     def __str__(self):
         return self.arroba
