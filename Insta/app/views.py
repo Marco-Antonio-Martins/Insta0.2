@@ -8,4 +8,4 @@ def index(request, arroba):
         publi = post.objects.filter(arroba=arroba)
     except arroba.DoesNotExist:
         raise Http404('Arroba não encontrado')
-    return render(request, 'app/index.html', {'post' : publi, 'arroba': arroba})
+    return render(request, 'app/index.html', {'publi' : publi, 'arroba': arroba})

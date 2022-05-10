@@ -1,11 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ arroba.arroba }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}"/>
 </head>
 <body>
+    <div>
+    <br>
     {{ arroba.nome }}
     <br>
     {{ arroba.bio }}
@@ -14,8 +19,16 @@
     <br>
     {{arroba.descrição}}
     <br>
-    {{post.descricao}}
+    {% for i in publi %}
+    {{ i.arroba }}
     <br>
-    {{post}}
+    {{ i.descricao }}
+    <br>
+    {{ i.data }}
+    <br>
+    {{i.foto}}
+    <br>
+    {% endfor %}
+    </div>
 </body>
 </html>
